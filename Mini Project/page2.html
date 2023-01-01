@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+
+    <style>
+        header{
+            position: fixed;
+            top: 0%;
+            left: 0%;
+            padding: 20px 10px;
+            width: 100%;
+            z-index: 1;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            transition: 0.5s;
+    }
+    .logo{
+        color: #fff;
+        font-weight: bold;
+        font-size: 2em;
+        text-decoration: none;
+    }
+    .logo span{
+            color:rgb(216, 159, 52);
+    }
+
+    .navbar{
+            display: flex;
+            position: relative;
+    }
+    .navbar li{
+            list-style: none;
+    }
+    .navbar a{
+        color: #fff;
+        text-decoration: none;
+        margin-left: 30px;
+        font-weight: 700;
+    }
+    .Home{
+        background: linear-gradient(rgba(0,0,0,0.1),#333),url("./images/img1p2.jpg");
+        width: 100%;
+    }
+    .Home .contenu{
+        max-width: 70%;
+        text-align: center;
+    }
+    .Home .contenu h2{
+        color: #fff;
+        font-size: 3em;
+        text-transform: capitalize;
+        
+    }
+    .contenu p:nth-child(2){
+        color: #ffff;
+        font-size: 1.2em;
+}
+
+.btn1{
+    font-size: 1em;
+    color: #fff;
+    background:rgb(216, 159, 52);
+    padding: 10px 20px;
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.5s;
+    margin-left: 10px;
+    text-align: center;
+}
+section{
+    padding: 100px;
+}
+.row{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.row .col50{
+    position: relative;
+    width: 48%;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.row .col50 h2{
+    margin-bottom: 20px;
+}
+
+.titre-texte{
+    color: #000;
+    font-size: 2em;
+    font-weight: 300px;
+    text-transform: capitalize;
+}
+
+.titre-texte span{
+    color: rgb(216, 159, 52);
+    font-size: 1.5em;
+    font-weight: 700px;
+}
+
+
+
+.cours{
+    margin-top: -100px;
+}
+.cours .titre h2{
+    text-align: center;
+}
+
+.cours .contenu{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.cours .contenu .box{
+    width: 350px;
+    margin: 20px;
+   
+}
+
+.cours .contenu .box .imbox{
+    position: relative;
+ 
+    height: 300px;
+    white-space: nowrap;
+}
+.cours .contenu .box .imbox img{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+    </style>
+</head>
+<body>
+  
+    <header>
+        <a href="#" class="logo"><span>C</span>ourses</a>
+        <div class="menuToggle" ></div>
+        <ul class="navbar">
+            <li><a href="page2.html" id ="home" >Home</a></li>
+            <li><a href="Courses_Page.html"    id="courses" >Courses</a></li>
+            <li><a href=""  id =" about" >About</a></li>
+        </ul>
+    </header>
+    
+   
+    <section class="Home" id="Home">
+        <div class="contenu">
+            <h2>Eat(), Sleep(), Code(), Repeat()</h2>
+            <p>While You Are Alive</p>
+            <a href="Courses_Page.html" class="btn1">COURSES LIST</a>
+        </div>
+    </section>
+
+
+    <section class="cours" id="cours">
+        <div class="titre">
+            <h2 class="titre-texte"><span>/</span> Courses</h2>
+        </div>
+        <div class="contenu">
+            <div class="box">
+                <div class="imbox">
+                    <img id="myimg" src="./images/javascriptDef.png" alt="">
+                    <img id="myimg" src="./images/htmlBasics.PNG" alt="">
+                    <img id="myimg" src="./images/htmlElements.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    
+    <script src="courses.js">
+       
+         var myimg=document.getElementById("myimg");
+     
+         function changeimg(myimg,courses)
+         {
+            'use strict';
+            setInterval(function(){
+                myrandomnum= Math.floor((Math.random() * courses.lenght)+1);
+                console.log(myrandomnum);
+                myimg.src=courses[myrandomnum];
+            },1000);
+     }
+     changeimg(myimg,courses)
+    </script>
+</body>
+</html>
